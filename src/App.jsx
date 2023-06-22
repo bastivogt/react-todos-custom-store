@@ -22,7 +22,7 @@ export default function App() {
     <>
       <h1>App</h1>
       <AddTodo onAddTodo={addTodoHandler} />
-      {store.activeTodos.length != 0 ? (
+      {store.activeTodos.length !== 0 ? (
         <TodoList
           title="Active todos"
           todos={store.activeTodos}
@@ -31,7 +31,7 @@ export default function App() {
         />
       ) : null}
 
-      {store.doneTodos.length != 0 ? (
+      {store.doneTodos.length !== 0 ? (
         <TodoList
           title="Done todos"
           todos={store.doneTodos}
