@@ -2,14 +2,15 @@ import React from "react";
 import Todo from "./Todo";
 
 export default function TodoList({
-  title = "Todos",
+  title,
   todos,
   onTodoRemove,
   onTodoDoneChange,
 }) {
   return (
     <>
-      <h2>{title}</h2>
+      {title ? <h2>{title}</h2> : null}
+
       <ul>
         {todos.map((todo) => {
           return (
