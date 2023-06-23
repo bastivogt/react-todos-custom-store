@@ -52,10 +52,7 @@ export default function App() {
         }
       />
 
-      <IF
-        condition={store.todos.length === 0}
-        THEN={<h2>No todos ...</h2>}
-      ></IF>
+      <IF condition={store.todos.length === 0} THEN={<h2>No todos ...</h2>} />
     </>
   );
 }
