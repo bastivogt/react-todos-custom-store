@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { store } from "./store";
 import TodoList from "./todo/TodoList";
@@ -6,7 +6,11 @@ import AddTodo from "./todo/AddTodo";
 import IF from "./IF";
 
 export default function App() {
-  console.log(store.todos);
+  const [updater, setUpdater] = useState({});
+
+  store.onUpdate = function () {
+    setUpdater({ ...updater });
+  };
 
   function todoRemoveHandler(evt) {
     console.log("App - todoRemoveHandler", evt);
