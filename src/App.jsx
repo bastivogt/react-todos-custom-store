@@ -6,10 +6,10 @@ import AddTodo from "./todo/AddTodo";
 import IF from "./IF";
 
 export default function App() {
-  const [updater, setUpdater] = useState({});
+  const [, setUpdater] = useState({});
 
   store.onUpdate = function () {
-    setUpdater({ ...updater });
+    setUpdater({});
   };
 
   function todoRemoveHandler(evt) {

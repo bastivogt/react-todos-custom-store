@@ -7,8 +7,10 @@ export default function Todo({ id, title, done, onRemove, onDoneChange }) {
   }
 
   function removeHandler() {
-    store.removeTodo(id);
-    if (typeof onRemove === "function") onRemove({ id });
+    if (confirm("Do you really want to remove this todo?")) {
+      store.removeTodo(id);
+      if (typeof onRemove === "function") onRemove({ id });
+    }
   }
 
   function getTextStyle() {
