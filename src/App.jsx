@@ -4,13 +4,16 @@ import { store } from "./store";
 import TodoList from "./todo/TodoList";
 import AddTodo from "./todo/AddTodo";
 import IF from "./IF";
+import { useForceUpdate } from "./hooks/useForceUpdate";
 
 export default function App() {
-  const [, setUpdater] = useState({});
+  /*const [, setUpdater] = useState({});
 
   store.onUpdate = function () {
     setUpdater({});
-  };
+  };*/
+
+  store.onUpdate = useForceUpdate();
 
   function todoRemoveHandler(evt) {
     console.log("App - todoRemoveHandler", evt);
